@@ -1,0 +1,53 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "RCRcvMessage",
+    "description" : "RCRcvMessage service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/rcrcvmessage" : {
+      "post" : {
+        "summary" : "postRCRcvMessage",
+        "description" : "postRCRcvMessage",
+        "operationId" : "post-rcrcvmessage",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/RCGetMessage"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "RCGetMessage" : {
+      "type" : "object",
+      "required" : [ "Message", "CorrelationId", "fromTP" ],
+      "properties" : {
+        "fromTP" : {
+          "type" : "string"
+        },
+        "CorrelationId" : {
+          "type" : "string"
+        },
+        "Message" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

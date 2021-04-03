@@ -1,0 +1,21 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/assertsecurity.ValudateUser-ValudateUser.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/rcSendAndRcvMessage.RCSendMessageToPartner-RCSendMessageToPartner.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/rcSendAndRcvMessage.RCRcvMessage-RCRcvMessage.json",
+            "type": "generated"
+        }
+    ]
+}

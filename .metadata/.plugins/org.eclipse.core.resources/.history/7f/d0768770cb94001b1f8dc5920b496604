@@ -1,0 +1,53 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "SendResponseToTP",
+    "description" : "SendResponseToTP service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/sendresponsetotp" : {
+      "post" : {
+        "summary" : "postSendResponseToTP",
+        "description" : "postSendResponseToTP",
+        "operationId" : "post-sendresponsetotp",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ResponseToTP"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ResponseToTP" : {
+      "type" : "object",
+      "required" : [ "toTP", "Payload", "CorrelationId" ],
+      "properties" : {
+        "toTP" : {
+          "type" : "string"
+        },
+        "Payload" : {
+          "type" : "string"
+        },
+        "CorrelationId" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

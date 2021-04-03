@@ -1,0 +1,4 @@
+AssertSecurity.module|tibco.preference.bw.profileConfigProperties=PropertyFirstColumnId,0,250;Type,1,200;default,2,706
+AssertSecurity|tibco.preference.bw.profileConfigProperties=PropertyFirstColumnId,0,200;default,1,288;docker,2,798
+RcvRespBCTxn.module|tibco.preference.bw.profileConfigProperties=PropertyFirstColumnId,0,250;Type,1,200;default,2,706
+eclipse.preferences.version=1

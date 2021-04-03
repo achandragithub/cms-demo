@@ -1,0 +1,17 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/RcvRespBCTxn.module/Service Descriptors/rcSendAndRcvMessage.RCSendMessageToPartner-RCSendMessageToPartner.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/RCCommunications"
+    },
+    {
+        "jsonSchemaLocation": "/RcvRespBCTxn.module/Service Descriptors/rcSendAndRcvMessage.RCRcvMessage-RCRcvMessage.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/RCCommunications"
+    },
+    {
+        "jsonSchemaLocation": "/RcvRespBCTxn.module/Service Descriptors/rcGenerateResponsetoPartner.SendResponseToTP-SendResponseToTP.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/RCResponseToPartner"
+    }
+]}

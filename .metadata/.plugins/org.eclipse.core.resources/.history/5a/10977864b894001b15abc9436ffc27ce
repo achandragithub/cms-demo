@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_i5KpgJNVEeuEQOcRNozDlQ" targetNamespace="http://tns.tibco.com/bw/composite/RcvRespBCTxn.module" name="RcvRespBCTxn.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_jMYngJS1EeuI6KkEtU21kA" name="valudateuser" promote="ComponentValudateUser/valudateuser">
+    <sca:interface.wsdl xmi:id="_jMgjUJS1EeuI6KkEtU21kA" interface="http://xmlns.example.com/20210403134823PLT#wsdl.interface(valudateuser)" scaext:wsdlLocation="../Processes/assertsecurity/ValudateUser.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_jMptQJS1EeuI6KkEtU21kA" name="RestService" path="/valudateuser" docBasePath="http://localhost:7777/RcvRespBCTxn.module" docResourcePath="ValudateUser" basePath="/" connector="rcvrespbctxn.module.ValudateUser" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/assertsecurity.ValudateUser-ValudateUser.json">
+      <operation xmi:id="_jMq7YJS1EeuI6KkEtU21kA" operationName="get" nickname="get-valudateuser" httpMethod="GET" notes="getValudateUser" responseStyle="element" outputPartName="isValid">
+        <parameters xmi:id="_uARn4JS1EeuI6KkEtU21kA">
+          <parameterMapping xmi:id="_uARn4ZS1EeuI6KkEtU21kA" parameterName="userName" parameterType="Query" dataType="string"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_jMwa8JS1EeuI6KkEtU21kA"/>
+      <advancedConfig xmi:id="_jMptQZS1EeuI6KkEtU21kA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_jMq7YZS1EeuI6KkEtU21kA" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_2Xy3BJS2EeuI6KkEtU21kA" name="rcsendmessagetopartner" promote="ComponentRCSendMessageToPartner/rcsendmessagetopartner">
+    <sca:interface.wsdl xmi:id="_2XzeE5S2EeuI6KkEtU21kA" interface="http://xmlns.example.com/20210403135741PLT#wsdl.interface(rcsendmessagetopartner)" scaext:wsdlLocation="../Processes/rcSendAndRcvMessage/RCSendMessageToPartner.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_2X0sMJS2EeuI6KkEtU21kA" name="RestService1" path="/rcsendmessagetopartner" docBasePath="http://localhost:7777/RcvRespBCTxn.module" docResourcePath="RCSendMessageToPartner" basePath="/" connector="rcvrespbctxn.module.ValudateUser" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/rcSendAndRcvMessage.RCSendMessageToPartner-RCSendMessageToPartner.json">
+      <operation xmi:id="_2X0sMpS2EeuI6KkEtU21kA" operationName="post" nickname="post-rcsendmessagetopartner" httpMethod="POST" notes="postRCSendMessageToPartner" responseStyle="element" requestStyle="element" outputPartName="MessageRecpt">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_2X16UJS2EeuI6KkEtU21kA"/>
+      <advancedConfig xmi:id="_2X0sMZS2EeuI6KkEtU21kA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_2X0sM5S2EeuI6KkEtU21kA" bindingName="RestService1"/>
+  </sca:service>
+  <sca:service xmi:id="_HBudspS3EeuI6KkEtU21kA" name="rcrcvmessage" promote="ComponentRCRcvMessage/rcrcvmessage">
+    <sca:interface.wsdl xmi:id="_HBudtpS3EeuI6KkEtU21kA" interface="http://xmlns.example.com/20210403135933PLT#wsdl.interface(rcrcvmessage)" scaext:wsdlLocation="../Processes/rcSendAndRcvMessage/RCRcvMessage.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_HBvr0JS3EeuI6KkEtU21kA" name="RestService2" path="/rcrcvmessage" docBasePath="http://localhost:7777/RcvRespBCTxn.module" docResourcePath="RCRcvMessage" basePath="/" connector="rcvrespbctxn.module.ValudateUser" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/rcSendAndRcvMessage.RCRcvMessage-RCRcvMessage.json">
+      <operation xmi:id="_HBwS4JS3EeuI6KkEtU21kA" operationName="post" nickname="post-rcrcvmessage" httpMethod="POST" notes="postRCRcvMessage" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_HBw58JS3EeuI6KkEtU21kA"/>
+      <advancedConfig xmi:id="_HBvr0ZS3EeuI6KkEtU21kA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_HBwS4ZS3EeuI6KkEtU21kA" bindingName="RestService2"/>
+  </sca:service>
+  <sca:service xmi:id="_GxhCApS4EeuI6KkEtU21kA" name="sendresponsetotp" promote="ComponentSendResponseToTP/sendresponsetotp">
+    <sca:interface.wsdl xmi:id="_GxhpEJS4EeuI6KkEtU21kA" interface="http://xmlns.example.com/20210403140641PLT#wsdl.interface(sendresponsetotp)" scaext:wsdlLocation="../Processes/rcGenerateResponsetoPartner/SendResponseToTP.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_GxiQIJS4EeuI6KkEtU21kA" name="RestService3" path="/sendresponsetotp" docBasePath="http://localhost:7777/RcvRespBCTxn.module" docResourcePath="SendResponseToTP" basePath="/" connector="rcvrespbctxn.module.ValudateUser" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/rcGenerateResponsetoPartner.SendResponseToTP-SendResponseToTP.json">
+      <operation xmi:id="_Gxi3MJS4EeuI6KkEtU21kA" operationName="post" nickname="post-sendresponsetotp" httpMethod="POST" notes="postSendResponseToTP" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_GxkFUJS4EeuI6KkEtU21kA"/>
+      <advancedConfig xmi:id="_GxiQIZS4EeuI6KkEtU21kA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_Gxi3MZS4EeuI6KkEtU21kA" bindingName="RestService3"/>
+  </sca:service>
+  <sca:property xmi:id="_jegLMJNVEeuEQOcRNozDlQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_jerKUJNVEeuEQOcRNozDlQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_jeu0sJNVEeuEQOcRNozDlQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_jeyfEJNVEeuEQOcRNozDlQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_je2JcJNVEeuEQOcRNozDlQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_je5z0JNVEeuEQOcRNozDlQ" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_je83IJNVEeuEQOcRNozDlQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_vuoR0JSOEeuI6KkEtU21kA" name="BCEmsURL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_jNBZoJNVEeuEQOcRNozDlQ" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_jNCnwJNVEeuEQOcRNozDlQ" processName="rcvrespbctxn.module.Rcv276"/>
+  </sca:component>
+  <sca:component xmi:id="_jMQEoJS1EeuI6KkEtU21kA" name="ComponentValudateUser" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_jMQEoZS1EeuI6KkEtU21kA" processName="assertsecurity.ValudateUser"/>
+    <sca:service xmi:id="_jMUWEJS1EeuI6KkEtU21kA" name="valudateuser">
+      <sca:interface.wsdl xmi:id="_jMVkMJS1EeuI6KkEtU21kA" interface="http://xmlns.example.com/20210403134823PLT#wsdl.interface(valudateuser)" scaext:wsdlLocation="../Processes/assertsecurity/ValudateUser.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_2Xy3AJS2EeuI6KkEtU21kA" name="ComponentRCSendMessageToPartner" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_2Xy3AZS2EeuI6KkEtU21kA" processName="rcSendAndRcvMessage.RCSendMessageToPartner"/>
+    <sca:service xmi:id="_2Xy3ApS2EeuI6KkEtU21kA" name="rcsendmessagetopartner">
+      <sca:interface.wsdl xmi:id="_2Xy3A5S2EeuI6KkEtU21kA" interface="http://xmlns.example.com/20210403135741PLT#wsdl.interface(rcsendmessagetopartner)" scaext:wsdlLocation="../Processes/rcSendAndRcvMessage/RCSendMessageToPartner.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_HBt2oJS3EeuI6KkEtU21kA" name="ComponentRCRcvMessage" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_HBt2oZS3EeuI6KkEtU21kA" processName="rcSendAndRcvMessage.RCRcvMessage"/>
+    <sca:service xmi:id="_HBudsJS3EeuI6KkEtU21kA" name="rcrcvmessage">
+      <sca:interface.wsdl xmi:id="_HBudsZS3EeuI6KkEtU21kA" interface="http://xmlns.example.com/20210403135933PLT#wsdl.interface(rcrcvmessage)" scaext:wsdlLocation="../Processes/rcSendAndRcvMessage/RCRcvMessage.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_Gxga8JS4EeuI6KkEtU21kA" name="ComponentSendResponseToTP" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Gxga8ZS4EeuI6KkEtU21kA" processName="rcGenerateResponsetoPartner.SendResponseToTP"/>
+    <sca:service xmi:id="_GxhCAJS4EeuI6KkEtU21kA" name="sendresponsetotp">
+      <sca:interface.wsdl xmi:id="_GxhCAZS4EeuI6KkEtU21kA" interface="http://xmlns.example.com/20210403140641PLT#wsdl.interface(sendresponsetotp)" scaext:wsdlLocation="../Processes/rcGenerateResponsetoPartner/SendResponseToTP.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

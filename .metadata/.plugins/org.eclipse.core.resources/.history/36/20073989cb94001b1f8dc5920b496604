@@ -1,0 +1,53 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "RCSendMessageToPartner",
+    "description" : "RCSendMessageToPartner service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/rcsendmessagetopartner" : {
+      "post" : {
+        "summary" : "postRCSendMessageToPartner",
+        "description" : "postRCSendMessageToPartner",
+        "operationId" : "post-rcsendmessagetopartner",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/RCSendMessage"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "RCSendMessage" : {
+      "type" : "object",
+      "required" : [ "toTp", "Message", "CorrelationId" ],
+      "properties" : {
+        "toTp" : {
+          "type" : "string"
+        },
+        "CorrelationId" : {
+          "type" : "string"
+        },
+        "Message" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

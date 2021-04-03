@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/RCCommunications" xmlns:tns="http://www.example.org/RCCommunications" elementFormDefault="qualified">
+
+    <complexType name="SendMessage">
+    	<sequence>
+    		<element name="toTp" type="string"></element>
+    		<element name="CorrelationId" type="string"></element>
+    		<element name="Message" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="GetMessage">
+    	<sequence>
+    		<element name="fromTP" type="string"></element>
+    		<element name="CorrelationId" type="string"></element>
+    		<element name="Message" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="RCSendMessage" type="tns:SendMessage"></element>
+
+    <element name="RCGetMessage" type="tns:GetMessage"></element>
+</schema>

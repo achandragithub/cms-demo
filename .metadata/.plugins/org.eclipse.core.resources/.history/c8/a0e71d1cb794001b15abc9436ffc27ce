@@ -1,0 +1,5 @@
+{"records": [{
+    "jsonSchemaLocation": "/RcvRespBCTxn.module/Service Descriptors/rcSendAndRcvMessage.RCSendMessageToPartner-RCSendMessageToPartner.json",
+    "conversionType": "linked",
+    "xsdSchemaTargetNamespace": "http://www.example.org/RCCommunications"
+}]}
