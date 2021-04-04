@@ -2,7 +2,7 @@
 <sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_i5KpgJNVEeuEQOcRNozDlQ" targetNamespace="http://tns.tibco.com/bw/composite/RcvRespBCTxn.module" name="RcvRespBCTxn.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
   <sca:service xmi:id="_jMYngJS1EeuI6KkEtU21kA" name="validateuser" promote="ComponentValudateUser/validateuser">
     <sca:interface.wsdl xmi:id="_jMgjUJS1EeuI6KkEtU21kA" interface="http://xmlns.example.com/20210403134823PLT#wsdl.interface(valudateuser)" scaext:wsdlLocation="../Processes/assertsecurity/ValudateUser.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_jMptQJS1EeuI6KkEtU21kA" name="RestService" path="/valudateuser" docBasePath="http://localhost:7777/RcvRespBCTxn.module" docResourcePath="ValidateUser" basePath="/" connector="rcvrespbctxn.module.ValudateUser" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/assertsecurity.ValudateUser-ValudateUser.json">
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_jMptQJS1EeuI6KkEtU21kA" name="RestService" path="/validateuser" docBasePath="http://localhost:7777/RcvRespBCTxn.module" docResourcePath="ValidateUser" basePath="/" connector="rcvrespbctxn.module.ValudateUser" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/assertsecurity.ValudateUser-ValudateUser.json">
       <operation xmi:id="_jMq7YJS1EeuI6KkEtU21kA" operationName="get" nickname="get-valudateuser" httpMethod="GET" notes="getValidateUser" responseStyle="element" outputPartName="isValid">
         <parameters xmi:id="_uARn4JS1EeuI6KkEtU21kA">
           <parameterMapping xmi:id="_uARn4ZS1EeuI6KkEtU21kA" parameterName="userName" parameterType="Query" dataType="string"/>
@@ -10,7 +10,6 @@
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
-      <parameters xmi:id="_jMwa8JS1EeuI6KkEtU21kA"/>
       <advancedConfig xmi:id="_jMptQZS1EeuI6KkEtU21kA" blockingQueueSize="2147483647"/>
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_jMq7YZS1EeuI6KkEtU21kA" bindingName="RestService"/>

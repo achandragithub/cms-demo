@@ -9,7 +9,7 @@
   "basePath" : "/",
   "schemes" : [ "http" ],
   "paths" : {
-    "/valudateuser" : {
+    "/validateuser" : {
       "get" : {
         "summary" : "getValidateUser",
         "description" : "getValidateUser",

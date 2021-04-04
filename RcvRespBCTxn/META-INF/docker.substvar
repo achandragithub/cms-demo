@@ -75,12 +75,13 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//RcvRespBCTxn.module//RestPort</name>
-			<value>38080</value>
+			<value>#RestPort#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
+			<isOverride>true</isOverride>
+			<useLookupValue>true</useLookupValue>
+			<lookupValue>#RestPort#</lookupValue>
 		</globalVariable>
 	</globalVariables>
 </repository>

@@ -193,6 +193,7 @@
             targetNamespace="http://xmlns.example.com/20210403134823PLT"
             xmlns:extns="http://tns.tibco.com/bw/REST"
             xmlns:extns1="http://xmlns.example.com/ValudateUser/parameters"
+            xmlns:extns2="http://xmlns.example.com/ValidateUser/parameters"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
             xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
             xmlns:tns="http://xmlns.example.com/20210403134823PLT"
@@ -203,6 +204,7 @@
             </plnk:partnerLinkType>
             <wsdl:import namespace="http://tns.tibco.com/bw/REST"/>
             <wsdl:import namespace="http://xmlns.example.com/ValudateUser/parameters"/>
+            <wsdl:import namespace="http://xmlns.example.com/ValidateUser/parameters"/>
             <wsdl:message name="getRequest">
                 <wsdl:part element="extns:httpHeaders"
                     name="httpHeaders" tibex:source="bw.rest"/>
@@ -220,7 +222,7 @@
                 <wsdl:part element="extns:server5XXError" name="serverError"/>
             </wsdl:message>
             <wsdl:portType name="valudateuser"
-                tibex:bw.rest.apipath="/valudateuser"
+                tibex:bw.rest.apipath="/validateuser"
                 tibex:bw.rest.basepath="ValudateUser"
                 tibex:bw.rest.resource="Service Descriptors/assertsecurity.ValidateUser-ValidateUser.json"
                 tibex:bw.rest.resource.source="generated" tibex:source="bw.rest.service">
