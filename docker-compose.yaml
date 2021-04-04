@@ -11,4 +11,4 @@ services:
       JAEGER_SAMPLER_MANAGER_HOST_PORT: jaeger:5778 cmsdemoapp
       BW_PROFILE: docker
       RestPort: 38080
-      BW_PROFILE=docker
+      BW_PROFILE: docker
