@@ -1,0 +1,14 @@
+version: '3'
+services:
+  cmsdemoapp:
+    image: cananthdocker/cms-demo
+    ports:
+      - '38080:38080'
+    environment:
+      BW_JAVA_OPTS: '-Dbw.engine.opentracing.enable=true'
+      JAEGER_AGENT_HOST: jaeger
+      JAEGER_AGENT_PORT: 6831
+      JAEGER_SAMPLER_MANAGER_HOST_PORT: jaeger:5778 cmsdemoapp
+      BW_PROFILE: docker
+      RestPort: 38080
+      BW_PROFILE=docker
