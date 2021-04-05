@@ -673,7 +673,7 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/bc#//ReceiveRequestNotification"/>
                                     <value
-                                    operationName="EDI/Inbound/Interchange"
+                                    operationName="00501/005010X212/276"
                                     parseXmlPayload="false"
                                     serverDetails="bcConnection" xsi:type="bc:ReceiveRequestNotification"/>
                                 </properties>
