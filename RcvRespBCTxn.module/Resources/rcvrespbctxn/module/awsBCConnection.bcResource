@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bcsr="http://ns.tibco.com/bw/palette/bcsr" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_oCR4YJNVEeuEQOcRNozDlQ" name="rcvrespbctxn.module.awsBCConnection" type="bcsr:BCConnection">
   <jndi:configuration xsi:type="bcsr:BCConnection" xmi:id="_oCWw4JNVEeuEQOcRNozDlQ" installationName="BC-TIBCO" ppTransport="JMS" protocol="X12" jdbcType="DRIVERTYPE_MSSQL" jdbcDriver="com.microsoft.sqlserver.jdbc.SQLServerDriver" jdbcUrl="jdbc:sqlserver://54.198.86.192:1433;databaseName=bc720" jdbcUsername="sa" jdbcPassword="#!iKgKVFl3op8YcTnKb7v8Qy5zFa/TTEkK/9tVTC4qek0=" jmsInstallationName="BC-TIBCO" jmsInstallationPrefix="AX.BC" jmsJmsUsername="admin" jmsJmsPassword="#!3RDMpUekwzTkzdp00q2LlQ==" jmsJndiContextFactory="com.tibco.tibjms.naming.TibjmsInitialContextFactory" jmsJndiUsername="admin" jmsJndiPassword="#!xMM+X+cYW/529KGmD0XD4Q==" jmsTopicConnectionFactory="TopicConnectionFactory" jmsQueueConnectionFactory="QueueConnectionFactory">
-    <substitutionBindings xmi:id="_yZmqUJSOEeuI6KkEtU21kA" template="jmsJndiContextUrl" propName="BCEmsURL"/>
+    <substitutionBindings xmi:id="_6iZpoJgAEeuELsyl3qPnOA" template="jmsJndiContextUrl" propName="BCEmsURL"/>
     <importedOperations xmi:id="_v6JFIJNYEeuEQOcRNozDlQ" name="00501/005010/999"/>
     <importedOperations xmi:id="_v6JFIZNYEeuEQOcRNozDlQ" name="00501/005010X212/276"/>
     <importedOperations xmi:id="_v6JFIpNYEeuEQOcRNozDlQ" name="00501/005010X212/277"/>

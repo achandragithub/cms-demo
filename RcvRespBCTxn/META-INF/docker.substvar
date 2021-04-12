@@ -66,12 +66,13 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//RcvRespBCTxn.module//BCEmsURL</name>
-			<value>tibjmsnaming://ec2-54-198-86-192.compute-1.amazonaws.com:7222</value>
+			<value>#BCEmsURL#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
+			<isOverride>true</isOverride>
+			<useLookupValue>true</useLookupValue>
+			<lookupValue>#BCEmsURL#</lookupValue>
 		</globalVariable>
 		<globalVariable>
 			<name>//RcvRespBCTxn.module//RestPort</name>

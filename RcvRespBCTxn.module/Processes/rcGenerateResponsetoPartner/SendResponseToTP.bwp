@@ -16,20 +16,6 @@
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
     xmlns:tibprop="http://ns.tibco.com/bw/property"
     xmlns:tns="http://www.example.org/RCResponseToPartner" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <tibex:VariableDescriptor type="MemorySaving">
-        <task name="postOut">
-            <endingVariables>
-                <variable>postOut-input</variable>
-                <variable>post</variable>
-            </endingVariables>
-        </task>
-        <task name="SendRequest">
-            <endingVariables>
-                <variable>SendRequest-input</variable>
-                <variable>SendRequest</variable>
-            </endingVariables>
-        </task>
-    </tibex:VariableDescriptor>
     <tibex:Types>
         <xs:schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
@@ -897,6 +883,10 @@
         <tibex:namespaceItem
             namespace="http://xmlns.example.com/20210403140641PLT" prefix="tns"/>
         <tibex:namespaceItem namespace="http://tns.tibco.com/bw/REST" prefix="tns1"/>
+        <tibex:namespaceItem
+            namespace="http://tns.tibco.com/bw/bc/sendrequest/xsd/+aa74297a-8661-42b5-bca8-f56f9e779990+input" prefix="tns3"/>
+        <tibex:namespaceItem
+            namespace="http://www.example.org/RCResponseToPartner" prefix="tns2"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/RCResponseToPartner"/>
@@ -973,7 +963,7 @@
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.org/RCResponseToPartner&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/bc/sendrequest/xsd/+aa74297a-8661-42b5-bca8-f56f9e779990+input&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;SendRequest-input&quot; match=&quot;/&quot;>&lt;tns1:SendRequestInput>&lt;tns1:BCInitiatorRequest>&lt;tns1:transactionID>&lt;xsl:value-of select=&quot;$post/ResponseInfo/tns:ResponseToTP/tns:CorrelationId&quot;/>&lt;/tns1:transactionID>&lt;tns1:tpName>&lt;xsl:value-of select=&quot;$post/ResponseInfo/tns:ResponseToTP/tns:toTP&quot;/>&lt;/tns1:tpName>&lt;/tns1:BCInitiatorRequest>&lt;tns1:body>&lt;tns1:stringData>&lt;xsl:value-of select=&quot;$post/ResponseInfo/tns:ResponseToTP/tns:Payload&quot;/>&lt;/tns1:stringData>&lt;/tns1:body>&lt;/tns1:SendRequestInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.example.org/RCResponseToPartner&quot; xmlns:tns3=&quot;http://tns.tibco.com/bw/bc/sendrequest/xsd/+aa74297a-8661-42b5-bca8-f56f9e779990+input&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;SendRequest-input&quot; match=&quot;/&quot;>&lt;tns3:SendRequestInput>&lt;tns3:BCInitiatorRequest>&lt;tns3:transactionID>&lt;xsl:value-of select=&quot;$post/ResponseInfo/tns2:ResponseToTP/tns2:CorrelationId&quot;/>&lt;/tns3:transactionID>&lt;tns3:tpName>&lt;xsl:value-of select=&quot;$post/ResponseInfo/tns2:ResponseToTP/tns2:toTP&quot;/>&lt;/tns3:tpName>&lt;/tns3:BCInitiatorRequest>&lt;tns3:body>&lt;tns3:stringData>&lt;xsl:value-of select=&quot;$post/ResponseInfo/tns2:ResponseToTP/tns2:Payload&quot;/>&lt;/tns3:stringData>&lt;/tns3:body>&lt;/tns3:SendRequestInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="SendRequest-input"
                                     name="SendRequest"
@@ -991,7 +981,7 @@
                                     </tibex:tags>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.org/RCResponseToPartner&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/bc/sendrequest/xsd/+aa74297a-8661-42b5-bca8-f56f9e779990+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.ResponseInfo&quot;/>&#xa;    &lt;xsl:template name=&quot;SendRequest-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:SendRequestInput>&#xa;            &lt;tns1:BCInitiatorRequest>&#xa;                &lt;tns1:transactionID>&#xa;                    &lt;xsl:value-of select=&quot;$post.ResponseInfo/tns:CorrelationId&quot;/>&#xa;                &lt;/tns1:transactionID>&#xa;                &lt;tns1:tpName>&#xa;                    &lt;xsl:value-of select=&quot;$post.ResponseInfo/tns:toTP&quot;/>&#xa;                &lt;/tns1:tpName>&#xa;            &lt;/tns1:BCInitiatorRequest>&#xa;            &lt;tns1:body>&#xa;                &lt;tns1:stringData>&#xa;                    &lt;xsl:value-of select=&quot;$post.ResponseInfo/tns:Payload&quot;/>&#xa;                &lt;/tns1:stringData>&#xa;            &lt;/tns1:body>&#xa;        &lt;/tns1:SendRequestInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.example.org/RCResponseToPartner&quot; xmlns:tns3=&quot;http://tns.tibco.com/bw/bc/sendrequest/xsd/+aa74297a-8661-42b5-bca8-f56f9e779990+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.ResponseInfo&quot;/>&#xa;    &lt;xsl:template name=&quot;SendRequest-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:SendRequestInput>&#xa;            &lt;tns3:BCInitiatorRequest>&#xa;                &lt;tns3:transactionID>&#xa;                    &lt;xsl:value-of select=&quot;$post.ResponseInfo/tns2:CorrelationId&quot;/>&#xa;                &lt;/tns3:transactionID>&#xa;                &lt;tns3:tpName>&#xa;                    &lt;xsl:value-of select=&quot;$post.ResponseInfo/tns2:toTP&quot;/>&#xa;                &lt;/tns3:tpName>&#xa;            &lt;/tns3:BCInitiatorRequest>&#xa;            &lt;tns3:body>&#xa;                &lt;tns3:stringData>&#xa;                    &lt;xsl:value-of select=&quot;$post.ResponseInfo/tns2:Payload&quot;/>&#xa;                &lt;/tns3:stringData>&#xa;            &lt;/tns3:body>&#xa;        &lt;/tns3:SendRequestInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity

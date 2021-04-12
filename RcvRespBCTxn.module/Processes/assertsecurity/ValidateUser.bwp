@@ -10,20 +10,8 @@
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
-    xmlns:tibprop="http://ns.tibco.com/bw/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <tibex:VariableDescriptor type="MemorySaving">
-        <task name="getOut">
-            <endingVariables>
-                <variable>getOut-input</variable>
-            </endingVariables>
-        </task>
-        <task name="Log">
-            <endingVariables>
-                <variable>Log-input</variable>
-                <variable>get</variable>
-            </endingVariables>
-        </task>
-    </tibex:VariableDescriptor>
+    xmlns:tibprop="http://ns.tibco.com/bw/property"
+    xmlns:tns="http://xmlns.example.com/ValudateUser/parameters" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <tibex:Types>
         <xs:schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
@@ -780,6 +768,18 @@
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://xmlns.example.com/20210403134823PLT" version="2.0"&gt;&lt;xsl:template name="getOut-input" match="/"&gt;&lt;tns:getResponse&gt;&lt;isValid&gt;&lt;xsl:value-of select="true()"/&gt;&lt;/isValid&gt;&lt;/tns:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+                                <tibex:tags>
+                                    <tibex:tag tagName="UserId">
+                                    <tagExpression expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0">$get.parameters/tns:userName</tagExpression>
+                                    <tibex:tagDesignExpression
+                                    expression="$get/parameters/tns:valudateuserGetParameters/tns:userName" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:tag>
+                                    <tibex:tag tagName="CorrelationId">
+                                    <tagExpression expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0">$get.parameters/tns:CorrelationId</tagExpression>
+                                    <tibex:tagDesignExpression
+                                    expression="$get/parameters/tns:valudateuserGetParameters/tns:CorrelationId" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:tag>
+                                </tibex:tags>
                                 <bpws:targets>
                                     <bpws:target linkName="LogTogetOut"/>
                                 </bpws:targets>

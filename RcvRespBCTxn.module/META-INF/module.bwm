@@ -6,6 +6,7 @@
       <operation xmi:id="_jMq7YJS1EeuI6KkEtU21kA" operationName="get" nickname="get-valudateuser" httpMethod="GET" notes="getValidateUser" responseStyle="element" outputPartName="isValid">
         <parameters xmi:id="_uARn4JS1EeuI6KkEtU21kA">
           <parameterMapping xmi:id="_uARn4ZS1EeuI6KkEtU21kA" parameterName="userName" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_hubLEJZ-EeuIoNQDOwm9gg" parameterName="CorrelationId" parameterType="Query" dataType="string"/>
         </parameters>
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
