@@ -1,4 +1,4 @@
-Manifest-Version: 1.0.0.202104032102
+Manifest-Version: 1.0.0.202107281316
 Bundle-SymbolicName: RcvRespBCTxn.module
 Bundle-ManifestVersion: 2
 TIBCO-BW-Edition: bwcf
@@ -13,7 +13,7 @@ Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",com.tib
 TIBCO-BW-ConfigProfile: META-INF/default.substvar
 TIBCO-BW-Version: 2.6.1 V57 2021-02-13
 Bundle-Name: RcvRespBCTxn Module
-Bundle-Version: 1.0.0.202104032102
+Bundle-Version: 1.0.0.202107281316
 Bundle-ClassPath: .
 TIBCO-BW-ApplicationModule: META-INF/module.bwm
 TIBCO-BW-JobSharedVariables: META-INF/module.jsv
